@@ -1,0 +1,179 @@
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+/* The hero image */
+.hero-image {
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.651), rgba(0, 0, 0, 0.63)),
+    url("world_note.jpg");
+
+  /* Set a specific height */
+  height: 50%;
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* Place text in the middle of the image */
+.hero-text {
+  /* padding: 2rem;
+  gap: 1rem;
+  display: flex;
+  align-items: center; */
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hero-text img {
+  animation: filter 10s infinite linear;
+}
+
+.hero-text > h1 {
+  font-size: 2.5rem;
+  border-bottom: 1px solid orange;
+  padding-bottom: 1rem;
+  color: orange;
+  animation: filter 10s infinite linear;
+  font-family: "Syncopate", sans-serif;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+main {
+  padding: 2rem;
+}
+
+.title-a {
+  color: orange;
+  text-decoration: none;
+}
+
+.main-title {
+  font-size: x-large;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bolder;
+  background-color: lightgray;
+  margin: 0rem 35rem;
+  padding: 1rem;
+}
+
+.main-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  font-size: larger;
+}
+
+.sec h3 {
+  font-size: xx-large;
+}
+
+.main-body img {
+  padding-left: 19rem;
+}
+
+.links {
+  list-style: none;
+}
+
+.links a {
+  text-decoration: none;
+}
+
+a {
+  color: currentColor;
+}
+
+.links {
+  margin: 2rem 20rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.links li {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  gap: 1rem;
+  transition: all 1000ms;
+}
+
+.links li:hover {
+  background-color: aliceblue;
+  transform: scale(1.1);
+}
+
+footer {
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+footer div {
+  margin: 0.5rem 0rem;
+}
+
+/* ANIMATION HERE */
+
+@keyframes filter {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+
+@media (max-width: 1450px) {
+  .main-title {
+    margin: 0rem 5rem;
+  }
+  .links {
+    margin: 2rem 4rem;
+    gap: 1rem;
+  }
+  main {
+    padding: 0.3rem;
+  }
+  * {
+    font-size: 1rem;
+  }
+  .main-body img {
+    padding-left: 0rem;
+  }
+}
+
+@media (max-width: 650px) {
+  .main-body {
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+  }
+  .links {
+    grid-template-columns: 1fr;
+  }
+}

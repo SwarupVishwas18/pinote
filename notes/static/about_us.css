@@ -1,0 +1,138 @@
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+/* The hero image */
+.hero-image {
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.651), rgba(0, 0, 0, 0.63)),
+    url("world-note.jpg");
+
+  /* Set a specific height */
+  height: 10%;
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* Place text in the middle of the image */
+.hero-text {
+  display: flex;
+  align-items: center;
+  /* padding: 1rem; */
+  /* padding-top: 2rem; */
+  padding-left: 3rem;
+  /* justify-content: center; */
+}
+
+.hero-text img {
+  animation: filter 10s infinite linear;
+}
+
+.hero-text > h1 {
+  font-size: 1.9rem;
+  /* padding-bottom: 1rem; */
+  color: orange;
+  animation: filter 10s infinite linear;
+  font-family: "Syncopate", sans-serif;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+footer {
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+footer div {
+  margin: 0.5rem 0rem;
+}
+
+main {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+  margin: 3rem 15rem;
+}
+
+.member {
+  padding: 0rem 2rem;
+  padding-top: 20rem;
+  padding-bottom: 2rem;
+  color: white;
+  transition: all 500ms;
+  text-align: center;
+  opacity: 0.5;
+}
+
+.swarup {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.534), rgba(0, 0, 0, 0.486)),
+    url("l.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.siddhi {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.534), rgba(0, 0, 0, 0.486)),
+    url("rein.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.dinesh {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.534), rgba(0, 0, 0, 0.486)),
+    url("lion.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.passive {
+  /* display: none; */
+  opacity: 0;
+}
+
+.member:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.active {
+  display: block;
+}
+
+/* ANIMATION HERE */
+
+@keyframes filter {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+
+@media (max-width: 725px) {
+  main {
+    flex-direction: column;
+  }
+
+  .member {
+    padding: 5rem 4rem;
+  }
+
+  main {
+    margin: 3rem 5rem;
+  }
+}

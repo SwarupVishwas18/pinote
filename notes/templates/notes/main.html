@@ -1,0 +1,149 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pinotes</title>
+
+    <link rel="stylesheet" href="{% static './main.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&family=Syncopate&family=Syne+Tactile&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body onload="changecolor()">
+    {% for msg in messages %}
+    <script>
+      alert("{{ msg }}");
+    </script>
+    {% endfor %}
+    <div class="hero-image">
+      <div class="header">
+        <a href="{% url 'notes:index' %}" class="title-a">
+          <div class="hero-text">
+            <h1>Pinote</h1>
+          </div>
+        </a>
+        <a href="{% url 'notes:logout' %}">
+          <div class="logout">
+            <img
+              src="{% static './img/logout.png' %}"
+              alt="Logout"
+              width="40"
+            />
+          </div>
+        </a>
+      </div>
+    </div>
+    <main>
+      <div
+        class="add-btn"
+        onclick="document.getElementById('id01').style.display='block'"
+      >
+        <button class="btn">Add the Note</button>
+      </div>
+
+      <div id="id01" class="modal">
+        <span
+          onclick="document.getElementById('id01').style.display='none'"
+          class="close"
+          title="Close Modal"
+          >×</span
+        >
+        <form class="modal-content animate" action="" method="POST">
+          {% csrf_token %}
+          <div class="container">
+            <label><b>Insert The Note</b></label>
+            <input
+              type="text"
+              placeholder="Note Title"
+              name="note_title"
+              required
+              autocomplete="off"
+            />
+
+            <textarea
+              name="note_body"
+              id="body"
+              placeholder="Enter the text"
+              cols="90"
+              rows="10"
+            ></textarea>
+
+            <div class="clearfix">
+              <button
+                type="button"
+                onclick="document.getElementById('id01').style.display='none'"
+                class="cancelbtn"
+              >
+                Cancel
+              </button>
+              <button
+                type="submit"
+                class="signupbtn"
+                style="background-color: cyan"
+              >
+                Add
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="notes-arena">
+        {% for note in notes_data %}
+        <div class="note">
+          <div class="note-header">
+            <div class="note-title">{{note.title}}</div>
+            <!-- <div class="note-menu" onclick="onmenu()">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    
+                </div> -->
+          </div>
+          <!-- <ul class="submenu">
+                    <li>Share Via Whatsapp</li>
+                    <li>Download txt</li>
+                </ul> -->
+          <div class="note-body">{{note.description}}</div>
+          <div class="note-footer">
+            <a href="{% url 'notes:copynote' note_id=note.id %}">
+              <div class="share">
+                <img src="{% static 'img/copy.png' %}" alt="Share" width="50" />
+              </div>
+            </a>
+            <a href="{% url 'notes:downloadnote' note_id=note.id %}">
+              <div class="downloadlink">
+                <img
+                  src="{% static 'img/download.png' %}"
+                  alt="Download"
+                  width="50"
+                />
+              </div>
+            </a>
+            <a href="{% url 'notes:deletenote' note_id=note.id %}">
+              <div class="delete-link">
+                <img src="{% static 'img/bin.png' %}" alt="Delete" width="50" />
+              </div>
+            </a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-title">&copy; pinotes 2022</div>
+      <div class="footer-subtitle">Project for Programming With Python</div>
+      <div class="guidance">Under the Guidance of Smt. Jyoti Hange Ma'am</div>
+    </footer>
+
+    <script src="{% static './menuopen.js' %}"></script>
+  </body>
+</html>

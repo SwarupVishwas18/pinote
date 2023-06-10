@@ -1,0 +1,75 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pinotes</title>
+    <link rel="stylesheet" href="{% static 'about_us.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&family=Syncopate&family=Syne+Tactile&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="hero-image">
+      <a href="{% url 'notes:index' %}" class="title-a">
+        <div class="hero-text">
+          <h1>Pinote</h1>
+        </div>
+      </a>
+    </div>
+
+    <main>
+      <div
+        class="member siddhi"
+        onmouseover="siddhiOn()"
+        onmouseout="siddhiOff()"
+      >
+        <h1 id="siddhi-name">Siddhi Tavhare</h1>
+        <div class="passive" id="siddhi-no">
+          <div class="enroll">Enroll : 1910510130</div>
+          <div class="roll">Roll : 58</div>
+        </div>
+      </div>
+
+      <div
+        class="member dinesh"
+        id="dinesh-name"
+        onmouseover="dineshOn()"
+        onmouseout="dineshOff()"
+      >
+        <h1 class="active">Dinesh Temgire</h1>
+        <div class="passive" id="dinesh-no">
+          <div class="enroll">Enroll : 1910510131</div>
+          <div class="roll">Roll : 59</div>
+        </div>
+      </div>
+
+      <div
+        class="member swarup"
+        onmouseover="swarupOn()"
+        onmouseout="swarupOff()"
+      >
+        <h1 id="swarup-name">Swarup Vishwas</h1>
+        <div class="passive" id="swarup-no">
+          <div class="enroll">Enroll : 1910510132</div>
+          <div class="roll">Roll : 60</div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-title">&copy; pinotes 2022</div>
+      <div class="footer-subtitle">Project for Programming With Python</div>
+      <div class="guidance">Under the Guidance of Smt. Jyoti Hange Ma'am</div>
+    </footer>
+
+    <script src="{% static 'about_us.js' %}"></script>
+  </body>
+</html>

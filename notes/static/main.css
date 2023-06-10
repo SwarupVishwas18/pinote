@@ -1,0 +1,287 @@
+* {
+  font-family: "Montserrat", sans-serif;
+  z-index: 1;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+/* The hero image */
+.hero-image {
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.651), rgba(0, 0, 0, 0.63)),
+    url("world_note.jpg");
+
+  /* Set a specific height */
+  height: 10%;
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* Place text in the middle of the image */
+.hero-text {
+  display: flex;
+  align-items: center;
+  /* padding: 1rem; */
+  /* padding-top: 2rem; */
+  padding-left: 3rem;
+  justify-content: center;
+}
+
+.hero-text img {
+  animation: filter 10s infinite linear;
+}
+
+.add-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+}
+
+.btn {
+  padding: 0.7rem 1.3rem;
+  background-color: greenyellow;
+  font-weight: bolder;
+  font-size: 1.2rem;
+  border: none;
+}
+
+.btn:hover {
+  background-color: green;
+  color: navajowhite;
+}
+
+.hero-text > h1 {
+  font-size: 1.9rem;
+  /* padding-bottom: 1rem; */
+  color: orange;
+  animation: filter 10s infinite linear;
+  font-family: "Syncopate", sans-serif;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+.note-header {
+  font-size: x-large;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid dimgray;
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+  padding: 1rem;
+}
+
+.note-menu {
+  display: flex;
+  gap: 0.2rem;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.submenu {
+  font-size: 1rem;
+  list-style-type: none;
+  background-color: dimgray;
+  color: wheat;
+  padding: 1rem;
+  display: none;
+  z-index: 2;
+  width: 40%;
+  margin-left: 15rem;
+  margin-top: 0;
+  transform: translateY(-2rem);
+  transition: all 1000ms ease;
+}
+
+.note-body {
+  padding: 1rem;
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: dimgray;
+  text-align: right;
+}
+
+.active {
+  display: block;
+}
+
+.note {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1rem;
+  padding: 1rem;
+  transition: all 1000ms;
+}
+
+.notes-arena {
+  /* background-color: dimgray; */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+}
+
+.submenu li {
+  cursor: pointer;
+}
+
+.note-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  text-transform: uppercase;
+  gap: 1rem;
+}
+
+.note-footer div {
+  background: linear-gradient(rgba(0, 0, 0, 0.219), rgba(0, 0, 0, 0.301));
+  padding: 1rem;
+  transition: all 1000ms;
+}
+
+.note-footer div:hover {
+  transform: scale(1.1);
+}
+
+footer {
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+footer div {
+  margin: 0.5rem 0rem;
+}
+
+@keyframes filter {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+
+@media (max-width: 1200px) {
+  .notes-arena {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .notes-arena {
+    grid-template-columns: 1fr;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0rem 2rem;
+}
+
+/*add full-width input fields*/
+input[type="text"],
+input[type="password"],
+textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 2px solid #ccc;
+  box-sizing: border-box;
+}
+
+/*set styles for the cancel button*/
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #ff2e00;
+}
+
+.signupbtn {
+  padding: 14px 20px;
+  background-color: olive;
+}
+
+/*float cancel and signup buttons and add an equal width*/
+.cancelbtn,
+.signupbtn {
+  float: left;
+  width: 50%;
+  font-size: larger;
+  font-weight: bolder;
+}
+
+/*add padding to container elements*/
+.container {
+  padding: 16px;
+}
+
+/*define the modal’s background*/
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 4;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  padding-top: 60px;
+}
+
+/*define the modal-content background*/
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/*define the close button*/
+
+.close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  color: #000;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+/*define the close hover and focus effects*/
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+@media screen and (max-width: 300px) {
+  .cancelbtn,
+  .signupbtn {
+    width: 100%;
+  }
+}

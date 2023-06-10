@@ -1,0 +1,55 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pinotes</title>
+    <link rel="stylesheet" href="{% static './sign.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&family=Syncopate&family=Syne+Tactile&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    {% if messages %} {% for msg in messages %}
+    <script>
+      alert("{{msg}}");
+    </script>
+    {% endfor %} {% endif %}
+    <div class="hero-image">
+      <a href="{% url 'notes:index' %}" class="title-a">
+        <div class="hero-text">
+          <h1>Pinote</h1>
+        </div>
+      </a>
+    </div>
+
+    <main>
+      <div class="page-logo">
+        <img src="{% static './img/user.png' %}" alt="user" width="150" />
+      </div>
+      <div class="page-title">Log In</div>
+      <div class="form-container">
+        <form autocomplete="off" action="" method="post">
+          {% csrf_token %} {{form}}
+          <input type="submit" class="sub-btn" value="LOG IN" />
+        </form>
+      </div>
+      <div class="link">
+        New to pinote? <a href="{% url 'notes:register' %}">Create Account</a>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-title">&copy; pinotes 2022</div>
+      <div class="footer-subtitle">Project for Programming With Python</div>
+      <div class="guidance">Under the Guidance of Smt. Jyoti Hange Ma'am</div>
+    </footer>
+  </body>
+</html>

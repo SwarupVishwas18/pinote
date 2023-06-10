@@ -1,0 +1,99 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pinotes</title>
+    <link rel="stylesheet" href="{% static './style.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&family=Syncopate&family=Syne+Tactile&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="hero-image">
+      <a href="{% url 'notes:index' %}" class="title-a">
+        <div class="hero-text">
+          <img src="{% static './img/notes.png' %}" alt="Logo" width="100" />
+          <h1>Pinote</h1>
+        </div>
+      </a>
+    </div>
+
+    <main>
+      <div class="main-title">Why is Writing Important?</div>
+      <div class="main-body">
+        <div class="sec">
+          <h3>Writing helps you think</h3>
+          Linguist Walter Ong (1982) observed that writing is necessary to help
+          the human mind achieve its full potential. Writing, for example,
+          allows the writer to concretize abstract ideas and to “connect the
+          dots in their knowledge,” according to the National Commission on
+          Writing in America’s Schools and Colleges (2003, p. 3). Particular
+          kinds of writing tasks may, indeed, be beneficial to intellectual
+          vitality, creativity, and thinking abilities. A study by Klein and
+          Boals (2001) found, for example, that when adults write about
+          significant life events their memory for such events is improved.
+        </div>
+        <img
+          src="{% static './img/ill.jpg' %}"
+          alt="illustration"
+          width="400"
+        />
+      </div>
+    </main>
+
+    <section>
+      <div class="main-title">Important Links</div>
+      <ul class="links">
+        <a href="{% url 'notes:login' %}">
+          <li>
+            <img src="{% static './img/user.png' %}" alt="login" width="50" />
+            Login
+          </li>
+        </a>
+        <a href="{% url 'notes:register' %}">
+          <li>
+            <img
+              src="{% static './img/new-user.png' %}"
+              alt="login"
+              width="50"
+            />
+            Sign up
+          </li>
+        </a>
+        <a href="{% url 'notes:about' %}">
+          <li>
+            <img
+              src="{% static './img/about-us.png' %}"
+              alt="login"
+              width="50"
+            />
+            About Us
+          </li>
+        </a>
+        <a href="https://www.gpawasari.ac.in/" target="_blank">
+          <li>
+            <img
+              src="{% static './img/university.png' %}"
+              alt="login"
+              width="50"
+            />
+            Our College
+          </li>
+        </a>
+      </ul>
+    </section>
+
+    <footer>
+      <div class="footer-title">&copy; pinotes 2022</div>
+      <div class="footer-subtitle">Project for Programming With Python</div>
+      <div class="guidance">Under the Guidance of Smt. Jyoti Hange Ma'am</div>
+    </footer>
+  </body>
+</html>
